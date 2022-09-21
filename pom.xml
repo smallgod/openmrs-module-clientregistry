@@ -194,7 +194,7 @@
     </dependencies>
   </dependencyManagement>
   <properties>
-    <revision>1.0.0-SNAPSHOT</revision>
+    <revision>1.0.0</revision>
     <fhir2Version>1.5.0</fhir2Version>
     <openmrsPlatformVersion>1.11.6</openmrsPlatformVersion>
   </properties>
