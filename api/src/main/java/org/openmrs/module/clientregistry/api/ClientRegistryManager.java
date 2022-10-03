@@ -1,5 +1,6 @@
 package org.openmrs.module.clientregistry.api;
 
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.apache.commons.lang.StringUtils;
@@ -32,10 +33,10 @@ public class ClientRegistryManager implements GlobalPropertyListener {
 	
 	@Autowired
 	private FhirCRPatientServiceImpl fhirPatientService;
-	
+
 	@Autowired
 	private ClientRegistryConfig clientRegistryConfig;
-	
+
 	public void setDaemonToken(DaemonToken daemonToken) {
 		this.daemonToken = daemonToken;
 	}
@@ -91,11 +92,11 @@ public class ClientRegistryManager implements GlobalPropertyListener {
 		
 		isRunning.set(false);
 	}
-	
+
 	/**
 	 * Determine the appropriate PatientService class based off of the client registry transaction
 	 * type configuration
-	 * 
+	 *
 	 * @return PatientService class corresponding to the appropriate transaction type supported by
 	 *         the client registry
 	 * @throws IllegalArgumentException if defined transaction type is unsupported
@@ -103,7 +104,7 @@ public class ClientRegistryManager implements GlobalPropertyListener {
 	public CRPatientService getPatientService() throws IllegalArgumentException {
 		try {
 			String transactionMethodGlobalProperty = clientRegistryConfig.getClientRegistryTransactionMethod().toUpperCase();
-			
+
 			switch (ClientRegistryTransactionType.valueOf(transactionMethodGlobalProperty)) {
 				case FHIR:
 					return fhirPatientService;
@@ -112,9 +113,9 @@ public class ClientRegistryManager implements GlobalPropertyListener {
 			}
 		}
 		catch (Exception ignored) {
-			
+
 		}
-		
+
 		throw new IllegalArgumentException("Unsupported transaction type");
 	}
 }
