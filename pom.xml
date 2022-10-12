@@ -216,7 +216,7 @@
   </profiles>
 
   <properties>
-    <revision>1.1.3</revision>
+    <revision>1.1.4</revision>
     <fhir2Version>1.5.0</fhir2Version>
     <openmrsPlatformVersion>1.11.6</openmrsPlatformVersion>
   </properties>
