@@ -17,18 +17,18 @@
     as acting as a Client Registry Consumer.
   </description>
 
-  <url>https://wiki.openmrs.org/x/FQ4z</url>
+    <url>https://wiki.openmrs.org/x/FQ4z</url>
 
-  <scm>
-    <connection>scm:git:git@github.com:openmrs/openmrs-module-clientregistry.git</connection>
-    <developerConnection>scm:git:git@github.com:openmrs/openmrs-module-clientregistry.git</developerConnection>
-    <url>https://github.com/openmrs/openmrs-module-clientregistry/</url>
-  </scm>
+    <scm>
+        <connection>scm:git:git@github.com:openmrs/openmrs-module-clientregistry.git</connection>
+        <developerConnection>scm:git:git@github.com:openmrs/openmrs-module-clientregistry.git</developerConnection>
+        <url>https://github.com/openmrs/openmrs-module-clientregistry/</url>
+    </scm>
 
-  <modules>
-    <module>api</module>
-    <module>omod</module>
-  </modules>
+    <modules>
+        <module>api</module>
+        <module>omod</module>
+    </modules>
 
   <build>
     <plugins>

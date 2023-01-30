@@ -30,7 +30,7 @@ public class ClientRegistryManager implements GlobalPropertyListener {
 	
 	@Autowired
 	private PatientCreateUpdateListener patientListener;
-	
+
 	@Autowired
 	private FhirCRPatientServiceImpl fhirPatientService;
 

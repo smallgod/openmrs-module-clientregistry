@@ -76,7 +76,7 @@
 
   <globalProperty>
     <property>@MODULE_ID@.username</property>
-    <defaultValue>openmrs</defaultValue>
+    <defaultValue>fiddler</defaultValue>
     <description>
       Username for BasicAuth for Client Registry
     </description>
@@ -84,7 +84,7 @@
 
   <globalProperty>
     <property>@MODULE_ID@.password</property>
-    <defaultValue>openmrs</defaultValue>
+    <defaultValue>fiddler</defaultValue>
     <description>
       Password for BasicAuth for Client Registry
     </description>
