@@ -16,8 +16,6 @@ public class ClientRegistryConstants {
 	
 	public static final String GP_CLIENT_REGISTRY_TRANSACTION_METHOD = "clientregistry.transactionMethod";
 	
-	public static final String GP_CLIENT_REGISTRY_TRANSACTION_METHOD = "clientregistry.transactionMethod";
-	
 	public static final String UPDATE_MESSAGE_DESTINATION = "topic://UPDATED:org.openmrs.Patient";
 	
 	public static final String CLIENT_REGISTRY_INTERNAL_ID_SYSTEM = "http://clientregistry.org/openmrs";

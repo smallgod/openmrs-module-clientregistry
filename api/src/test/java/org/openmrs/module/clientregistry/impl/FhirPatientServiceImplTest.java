@@ -31,47 +31,45 @@ import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 
 /**
- * @author smallGod
+ * @author Arthur D. Mugume
  */
 public class FhirPatientServiceImplTest extends BaseModuleContextSensitiveTest {
-
-    @Autowired
-    private EncounterService encounterService;
-
-    @Autowired
-    private ConceptService conceptService;
-
-    @Autowired
-    private ObsService obsService;
-
-    private Method methodInvoked;
-
-
-    private static final int START_INDEX = 0;
-
-    private static final int END_INDEX = 10;
-
-    @Autowired
-    private PatientTranslator translator;
-
-    @Autowired
-    private FhirPatientDao dao;
-
-    @Autowired
-    private SearchQueryInclude<Patient> searchQueryInclude;
-
-    @Before
-    public void initialiseCommonTestData() throws Exception {
-
-
-        executeDataSet("test-data/org.openmrs.module.clientregistry/api/api/dao/impl/FhirPatientDaoImplTest_initial_data.xml");
-        updateSearchIndex();
-        //Class encounterServiceImplClass = Class.forName("org.openmrs.api.impl.EncounterServiceImpl");
-        //methodInvoked = encounterServiceImplClass.getDeclaredMethod(ConceptComputeTrigger.SAVE_ENCOUNTER, Encounter.class);
-    }
-
-    @Test
-    public void searchForPatient_shouldReturnOnePatientinReturnedResults() {
+	
+	@Autowired
+	private EncounterService encounterService;
+	
+	@Autowired
+	private ConceptService conceptService;
+	
+	@Autowired
+	private ObsService obsService;
+	
+	private Method methodInvoked;
+	
+	private static final int START_INDEX = 0;
+	
+	private static final int END_INDEX = 10;
+	
+	@Autowired
+	private PatientTranslator translator;
+	
+	@Autowired
+	private FhirPatientDao dao;
+	
+	@Autowired
+	private SearchQueryInclude<Patient> searchQueryInclude;
+	
+	@Before
+	public void initialiseCommonTestData() throws Exception {
+		
+		executeDataSet("test-data/org.openmrs.module.clientregistry/api/api/dao/impl/FhirPatientDaoImplTest_initial_data.xml");
+		updateSearchIndex();
+		//Class encounterServiceImplClass = Class.forName("org.openmrs.api.impl.EncounterServiceImpl");
+		//methodInvoked = encounterServiceImplClass.getDeclaredMethod(ConceptComputeTrigger.SAVE_ENCOUNTER, Encounter.class);
+	}
+	
+	@Test
+    public void searchForPatient_shouldReturnOnePatient() {
 
         TokenAndListParam uuid = new TokenAndListParam().addAnd(new TokenParam("da7f524f-27ce-4bb2-86d6-6d1d05312bd5"));
         HashSet<Include> revIncludes = new HashSet<>();
